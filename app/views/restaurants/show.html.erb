@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <h1><%= @restaurant.name %></h1>
+  <p>Address: <%= @restaurant.address %></p>
+  <p>Phone: <%= @restaurant.phone_number %></p>
+  <p>Category: <%= @restaurant.category %></p>
+  <p>Reviews:</p>
+  <% @restaurant.reviews.each do |review| %>
+    <%= review.rating %>
+    <%= review.content %>
+  <% end %>
+  <%= link_to '<i class="fas fa-plus"></i> Add a new review'.html_safe, new_restaurant_review_path(@restaurant) %>
+  <%= link_to '<i class="fas fa-undo-alt"></i> Back to list!'.html_safe, restaurants_path %>
+</div>
